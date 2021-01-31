@@ -53,6 +53,11 @@
     // クイズを表示する関数
     class Quiz {
       constructor(obj) {
+        const _obj = obj;
+        this.getObj = function () {
+          return _obj;
+        };
+
         pushAns();
         // 配列のシャッフル
         let array = quizResult[val].incorrect_answers;
@@ -68,13 +73,13 @@
           return newArray;
         }
         shuffle();
-        console.log(obj);
+        console.log(_obj);
         console.log(quizResult[val].correct_answer);
 
         head.textContent = `問題${val + 1}`;
-        question.textContent = `${obj.question}`;
-        difficult.textContent = `【難易度】${obj.difficulty}`;
-        genre.textContent = `【ジャンル】${obj.category}`;
+        question.textContent = `${this.getObj.question}`;
+        difficult.textContent = `【難易度】${this.getObj.difficulty}`;
+        genre.textContent = `【ジャンル】${this.getObj.category}`;
 
         while (btnsDiv.lastChild) {
           btnsDiv.removeChild(btnsDiv.lastChild);
@@ -83,7 +88,6 @@
         for (let i = 0; i < ansLen; i++) {
           const ansBtn = document.createElement('button');
           ansBtn.className = 'answers';
-          // ansBtn.innerText = `${quizResult[val].incorrect_answers[i]}`;
           ansBtn.innerText = `${newArray[i]}`;
           btnsDiv.appendChild(ansBtn);
         }
@@ -124,6 +128,6 @@
       question: `${quizResult[val].question}`,
     });
 
-    console.log(quiz1);
+    console.log(quiz1.obj);
   }
 }
