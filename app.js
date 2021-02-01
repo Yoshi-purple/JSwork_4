@@ -77,9 +77,9 @@
         console.log(quizResult[val].correct_answer);
 
         head.textContent = `問題${val + 1}`;
-        question.textContent = `${this.getObj.question}`;
-        difficult.textContent = `【難易度】${this.getObj.difficulty}`;
-        genre.textContent = `【ジャンル】${this.getObj.category}`;
+        question.textContent = `${this.getObj().question}`;
+        difficult.textContent = `【難易度】${this.getObj().difficulty}`;
+        genre.textContent = `【ジャンル】${this.getObj().category}`;
 
         while (btnsDiv.lastChild) {
           btnsDiv.removeChild(btnsDiv.lastChild);
