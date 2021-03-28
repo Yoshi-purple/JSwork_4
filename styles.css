@@ -1,0 +1,25 @@
+/** @format */
+
+.question {
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  font-size: small;
+  padding: 5px 0;
+}
+
+.buttons {
+  margin-top: 15px;
+}
+
+.genre,
+.difficult {
+  font-size: small;
+}
+button {
+  display: block;
+  margin: 9px 0;
+}
+
+#ansLi {
+  list-style: none;
+}
